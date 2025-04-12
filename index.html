@@ -2,18 +2,28 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Gorg AI Chat</title>
+  <title>Gorg AI</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="chat-container">
-    <h1>Gorg AI</h1>
-    
-    <select id="modelSelector">
-      <option value="gorg-lite">Gorg Lite</option>
-      <option value="gorg-pro">Gorg Pro</option>
-      <option value="gorg-expert">Gorg Expert</option>
-    </select>
+  <div class="app-container">
+
+    <header>
+      <h2>Gorg AI</h2>
+      <div class="profile">
+        <img src="https://i.imgur.com/0y0y0y0.png" alt="Profile" />
+        <span>User</span>
+      </div>
+    </header>
+
+    <div class="settings-bar">
+      <select id="modelSelector">
+        <option value="lite">Gorg Lite</option>
+        <option value="pro">Gorg Pro</option>
+        <option value="expert">Gorg Expert</option>
+      </select>
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+    </div>
 
     <div id="chatbox" class="chatbox"></div>
 
