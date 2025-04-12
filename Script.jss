@@ -1,37 +1,39 @@
 function sendMessage() {
-  const inputField = document.getElementById("userInput");
+  const input = document.getElementById("userInput");
   const chatbox = document.getElementById("chatbox");
   const model = document.getElementById("modelSelector").value;
 
-  const userMessage = inputField.value.trim();
+  const userMessage = input.value.trim();
   if (!userMessage) return;
 
   chatbox.innerHTML += `<p><strong>You:</strong> ${userMessage}</p>`;
 
-  // Simulate AI response
   const aiReply = getAIResponse(userMessage, model);
-  chatbox.innerHTML += `<p><strong>${model}:</strong> ${aiReply}</p>`;
+  chatbox.innerHTML += `<p><strong>Gorg ${model}:</strong> ${aiReply}</p>`;
 
-  inputField.value = "";
+  input.value = "";
   chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-function getAIResponse(message, model) {
-  const msg = message.toLowerCase();
+function getAIResponse(msg, model) {
+  const lower = msg.toLowerCase();
 
-  if (model === "gorg-lite") {
-    if (msg.includes("hello")) return "Hey there!";
-    return "I'm Gorg Lite. Try asking basic questions.";
+  if (model === "lite") {
+    return lower.includes("hello") ? "Hi there!" : "I'm Gorg Lite. Ask simple questions!";
   }
 
-  if (model === "gorg-pro") {
-    if (msg.includes("who are you")) return "I'm Gorg Pro, an AI chatbot built by you.";
-    return `That's an interesting question! Gorg Pro is thinking...`;
+  if (model === "pro") {
+    if (lower.includes("your name")) return "I'm Gorg Pro, your friendly AI assistant.";
+    return "Hmm, that's a great question! Let me think...";
   }
 
-  if (model === "gorg-expert") {
-    return `Processing like ChatGPT... (You said: "${message}")`;
+  if (model === "expert") {
+    return `Analyzing deeply: "${msg}"... Response coming soon.`;
   }
 
-  return "I’m still learning!";
+  return "I'm learning more every day!";
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
 }
