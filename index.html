@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <title>Gorg AI</title>
-        <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
-          <div class="container">
-              <h2>Gorg AI Chat</h2>
-                  <div id="chatBox"></div>
-                      <input type="text" id="userInput" placeholder="Ask something..." />
-                          <button onclick="sendMessage()">Send</button>
-                            </div>
-                              <script src="script.js"></script>
-                              </body>
-                              </html>
-                              
+  <meta charset="UTF-8">
+  <title>Gorg AI Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="chat-container">
+    <h1>Gorg AI</h1>
+    
+    <select id="modelSelector">
+      <option value="gorg-lite">Gorg Lite</option>
+      <option value="gorg-pro">Gorg Pro</option>
+      <option value="gorg-expert">Gorg Expert</option>
+    </select>
+
+    <div id="chatbox" class="chatbox"></div>
+
+    <div class="input-area">
+      <input type="text" id="userInput" placeholder="Ask me anything..." />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
